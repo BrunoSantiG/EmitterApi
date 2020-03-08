@@ -9,7 +9,6 @@ describe("User CRUD", () => {
 			email: "teste@email.com",
 			password: "123456"
 		};
-
 		const response = await request(app)
 			.post("/register")
 			.send({

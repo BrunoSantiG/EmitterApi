@@ -18,7 +18,7 @@ module.exports = {
 			error.push("Password can't be null.");
 		}
 
-		const emailExists = Users.findOne({ where: { email } });
+		const emailExists = await Users.findOne({ where: { email: user.email } });
 		if (emailExists) {
 			error.push("Email is already in use.");
 		}
@@ -26,7 +26,7 @@ module.exports = {
 		if (error.length > 0) {
 			return { success: false, error };
 		}
-		const data = UserRepository.store({ name, email, password });
+		const data = UserRepository.store(user);
 		return { success: true, data };
 	}
 };
