@@ -1,13 +1,21 @@
-// const request = require("supertest");
+const request = require("supertest");
 
-// const app = require("../../src/app");
+const app = require("../../src/app");
 
-// const { User } = require("../../src/app/models");
+describe("User CRUD", () => {
+	it("should create a new User", async () => {
+		const User = {
+			name: "nome de",
+			email: "teste@email.com",
+			password: "123456"
+		};
 
-describe("Auth", () => {
-	it("teste jest", async () => {
-		const x = 2 + 2;
+		const response = await request(app)
+			.post("/register")
+			.send({
+				User
+			});
 
-		expect(x).toBe(4);
+		expect(response.status).toBe(201);
 	});
 });

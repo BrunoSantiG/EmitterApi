@@ -26,6 +26,13 @@
 				"named": "never",
 				"asyncArrow": "always"
 			}
+		],
+		"prefer-const": [
+			"error",
+			{
+				"destructuring": "any",
+				"ignoreReadBeforeAssign": false
+			}
 		]
 	}
 }
