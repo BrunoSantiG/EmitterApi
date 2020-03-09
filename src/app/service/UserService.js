@@ -1,4 +1,4 @@
-const { Users } = require("../app/models");
+const { Users } = require("../models");
 const UserRepository = require("../repository/UserRepository.js");
 
 module.exports = {

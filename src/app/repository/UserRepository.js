@@ -1,8 +1,7 @@
-const { Users } = require("../app/models");
+const { Users } = require("../models");
 
 module.exports = {
 	store: async data => {
-		console.log(data);
 		return Users.create(data);
 	}
 };
