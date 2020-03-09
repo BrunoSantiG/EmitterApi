@@ -12,7 +12,9 @@ describe("User CRUD", () => {
 		const response = await request(app)
 			.post("/register")
 			.send({
-				User
+				name: User.name,
+				email: User.email,
+				password: User.password
 			});
 
 		expect(response.status).toBe(201);

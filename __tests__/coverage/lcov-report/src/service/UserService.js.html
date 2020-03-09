@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">72.22% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/20</span>
+                <span class='fraction'>13/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">37.5% </span>
+                <span class="strong">68.75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/16</span>
+                <span class='fraction'>11/16</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">72.22% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/20</span>
+                <span class='fraction'>13/18</span>
             </div>
         
             
@@ -89,10 +89,7 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -101,30 +98,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const { Users } = require("../app/models");
@@ -134,32 +128,29 @@ module.exports = {
 	store: async user =&gt; {
 		const { name, email, password } = user;
 &nbsp;
-		console.log(user);
-		console.log(name);
-&nbsp;
 		const error = [];
-		<span class="missing-if-branch" title="else path not taken" >E</span>if (!name || <span class="branch-1 cbranch-no" title="branch not covered" >name === "")</span> {
-			error.push("Name can't be null.");
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (!name || name === "") {
+<span class="cstat-no" title="statement not covered" >			error.push("Name can't be null.");</span>
 		}
 &nbsp;
-		<span class="missing-if-branch" title="else path not taken" >E</span>if (!email || <span class="branch-1 cbranch-no" title="branch not covered" >email === "")</span> {
-			error.push("Email can't be null.");
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (!email || email === "") {
+<span class="cstat-no" title="statement not covered" >			error.push("Email can't be null.");</span>
 		}
 &nbsp;
-		<span class="missing-if-branch" title="else path not taken" >E</span>if (!password || <span class="branch-1 cbranch-no" title="branch not covered" >password === "")</span> {
-			error.push("Password can't be null.");
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (!password || password === "") {
+<span class="cstat-no" title="statement not covered" >			error.push("Password can't be null.");</span>
 		}
 &nbsp;
 		const emailExists = await Users.findOne({ where: { email: user.email } });
-<span class="cstat-no" title="statement not covered" >		if (emailExists) {</span>
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (emailExists) {
 <span class="cstat-no" title="statement not covered" >			error.push("Email is already in use.");</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		if (error.length &gt; 0) {</span>
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (error.length &gt; 0) {
 <span class="cstat-no" title="statement not covered" >			return { success: false, error };</span>
 		}
-		const data = <span class="cstat-no" title="statement not covered" >UserRepository.store(user);</span>
-<span class="cstat-no" title="statement not covered" >		return { success: true, data };</span>
+		const data = UserRepository.store(user);
+		return { success: true, data };
 	}
 };
 &nbsp;</pre></td></tr></table></pre>
@@ -169,7 +160,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun Mar 08 2020 18:20:52 GMT-0300 (GMT-03:00)
+                at Sun Mar 08 2020 21:54:30 GMT-0300 (GMT-03:00)
             </div>
         </div>
         <script src="../../prettify.js"></script>

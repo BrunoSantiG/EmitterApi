@@ -2,7 +2,6 @@ const UserService = require("../service/UserService.js");
 
 module.exports = {
 	store: async (req, res) => {
-		console.log(req.body.name);
 		const data = await UserService.store(req.body);
 
 		if (data.success) {
