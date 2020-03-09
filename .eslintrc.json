@@ -1,7 +1,8 @@
 {
 	"env": {
 		"browser": true,
-		"es6": true
+		"es6": true,
+		"jest": true
 	},
 	"extends": ["standard"],
 	"globals": {
@@ -17,6 +18,21 @@
 		"no-tabs": 0,
 		"global-require": "off",
 		"indent": ["error", "tab"],
-		"quotes": [2, "double", { "avoidEscape": true }]
+		"quotes": [2, "double", { "avoidEscape": true }],
+		"space-before-function-paren": [
+			"error",
+			{
+				"anonymous": "never",
+				"named": "never",
+				"asyncArrow": "always"
+			}
+		],
+		"prefer-const": [
+			"error",
+			{
+				"destructuring": "any",
+				"ignoreReadBeforeAssign": false
+			}
+		]
 	}
 }
