@@ -26,7 +26,7 @@ module.exports = {
 		if (error.length > 0) {
 			return { success: false, error };
 		}
-		const data = UserRepository.store(user);
+		const data = await UserRepository.store(user);
 		return { success: true, data };
 	}
 };
