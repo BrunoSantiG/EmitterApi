@@ -1,4 +1,4 @@
-const { Users } = require("../app/models");
+const { Users } = require("../models");
 const UserRepository = require("../repository/UserRepository.js");
 
 module.exports = {
@@ -26,7 +26,7 @@ module.exports = {
 		if (error.length > 0) {
 			return { success: false, error };
 		}
-		const data = UserRepository.store(user);
+		const data = await UserRepository.store(user);
 		return { success: true, data };
 	}
 };
