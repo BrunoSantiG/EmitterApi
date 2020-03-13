@@ -1,9 +1,10 @@
 const { ServiceBusClient } = require("@azure/service-bus");
-
+require("dotenv").config({
+	path: process.env.NODE_ENV === "test" ? ".env.test" : ".env"
+});
 // Define connection string and related Service Bus entity names here
-const connectionString =
-	"Endpoint=sb://testeoper.servicebus.windows.net/;SharedAccessKeyName=user-send;SharedAccessKey=jgI5ujdWPVqXYuiFN031ghb3ktPxe348XkmD++7wgu4=;EntityPath=user_queue";
-const queueName = "user_queue";
+const connectionString = process.env.SB_CONECTION;
+const queueName = process.env.SB_QUEUE;
 
 module.exports = {
 	send: async (namespace, message) => {
